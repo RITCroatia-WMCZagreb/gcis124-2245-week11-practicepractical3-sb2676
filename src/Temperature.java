@@ -1,6 +1,6 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.ArrayList;
 
 public class Temperature {
 
@@ -18,8 +18,17 @@ public class Temperature {
     public static TemperatureScale createF2C() {
         TemperatureScale f2C = null;
 
+
         // Delete from here
-       
+        f2C = new TemperatureScale() {
+
+            @Override
+            public double convert(double temperature) {
+                double c=(temperature -32)/1.8;
+                return c;
+            }
+            
+           };
 
         
         // to here
@@ -39,6 +48,10 @@ public class Temperature {
 
         // Delete from here
        
+        c2F = (double temperature)->{
+            return temperature=(temperature*1.8)+32;
+        };
+
         // to here
 
         return c2F;
