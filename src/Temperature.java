@@ -75,6 +75,15 @@ public class Temperature {
             // 2. Use f2C variable to convert the temperature to Celsius and
             //    store result in celciusTemps
         // Delete from here
+        for(double temp:temps){
+            double celsius=f2C.convert(temp);
+            celsiusTemps.add(celsius);
+            double fahrenheit=c2F.convert(temp);
+            fahrenheitTemps.add(fahrenheit);
+        }
+        System.out.println("Celsius: "+celsiusTemps);
+        System.out.println("fahrenheit: "+fahrenheitTemps);
+        System.out.println();
        
 
         // to here
@@ -83,6 +92,7 @@ public class Temperature {
         // Using stream(), filter(), and forEach(), print on a separate line all
         // elements of fahrenheitTemps that are *above* feezing (32F)
         // Delete from here
+        fahrenheitTemps.stream().filter(temp->temp>32).forEach(System.out::println);
       
        
       
@@ -93,7 +103,7 @@ public class Temperature {
         // elements of celsiusTemps that are *below* freezing (0C)
         // Delete from here
       
-    
+        celsiusTemps.stream().filter(temp->temp<0).forEach(System.out::println);
       
         // to here
     }
