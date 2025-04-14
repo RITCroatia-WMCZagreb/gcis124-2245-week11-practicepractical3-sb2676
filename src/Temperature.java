@@ -49,7 +49,8 @@ public class Temperature {
         // Delete from here
        
         c2F = (double temperature)->{
-            return temperature=(temperature*1.8)+32;
+            double c=(temperature*1.8)+32;
+            return c;
         };
 
         // to here
