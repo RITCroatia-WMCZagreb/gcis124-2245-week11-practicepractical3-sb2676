@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Temperature {
 
-    public interface TemperatureScale {
+    public interface TemperatureScale {//functional interface
         double convert(double temperature);
     }
 
@@ -20,7 +20,7 @@ public class Temperature {
 
 
         // Delete from here
-        f2C = new TemperatureScale() {
+        f2C = new TemperatureScale() {//instantiate new class in a variable
 
             @Override
             public double convert(double temperature) {
@@ -48,7 +48,7 @@ public class Temperature {
 
         // Delete from here
        
-        c2F = (double temperature)->{
+        c2F = (temperature)->{
             double c=(temperature*1.8)+32;
             return c;
         };
